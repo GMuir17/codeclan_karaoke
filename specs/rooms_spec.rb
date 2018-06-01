@@ -7,14 +7,14 @@ class RoomTest < MiniTest::Test
 
 
   def setup
-    @guest1 = Guest.new("Hall", 20)
-    @guest2 = Guest.new("Oates", 9)
-    @guest3 = Guest.new("Daryl", 50)
-
     song1 = Song.new("Everybody Wants to Rule the World", "Tears for Fears")
     song2 = Song.new("Sweet Dreams", "The Eurythmics")
     @song3 = Song.new("The Boys of Summer", "Don Henley")
     @song4 = Song.new("Don't You Want Me", "The Human League")
+
+    @guest1 = Guest.new("Hall", 20, song1)
+    @guest2 = Guest.new("Oates", 9, song2)
+    @guest3 = Guest.new("Daryl", 50, @song3)
 
     @room1 = Room.new("Eighties", [song1, song2], 4)
     @room2 = Room.new("Ninties", [], 2)
@@ -82,6 +82,11 @@ class RoomTest < MiniTest::Test
   def test_take_entry_fee_from_customer__insufficient_money
     @room1.take_entry_fee(@guest2)
     assert_equal(0, @room1.til())
+  end
+
+  def test_guests_favourite_song_is_on_rooms_playlist__song_present
+    @room1.add_guest(@guest1)
+    assert_equal(true, @room1.is_favourite_song_here?(@guest1))
   end
 
 end

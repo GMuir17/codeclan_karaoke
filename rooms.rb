@@ -40,5 +40,8 @@ class Room
     add_money(fee_to_exchange)
   end
 
+  def is_favourite_song_here?(guest)
+    @playlist.include?(guest.favourite_song())
+  end
 
 end
