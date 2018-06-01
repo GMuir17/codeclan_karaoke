@@ -19,8 +19,10 @@ class Guest
   end
 
   def check_for_favourite_song(room)
-    if room.is_favourite_song_here?(@favourite_song)
-      return "Yass,  they have #{@favourite_song}!"
+    if is_favourite_song_here?(room)
+      return "Yass, they have #{@favourite_song.name()}!"
+    else
+      return "Boo"
     end
   end
 
