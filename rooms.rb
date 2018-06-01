@@ -34,10 +34,10 @@ class Room
     @til += money
   end
 
-  # def take_entry_fee(guest)
-  #   fee_to_exchange = guest.remove_money(@entry_fee)
-  #
-  # end
+  def take_entry_fee(guest)
+    fee_to_exchange = guest.remove_money(@entry_fee)
+    add_money(fee_to_exchange)
+  end
 
 
 end
