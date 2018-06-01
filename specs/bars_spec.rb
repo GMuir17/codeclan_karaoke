@@ -30,4 +30,9 @@ class BarTest < MiniTest::Test
     assert_equal([], @bar.drinks())
   end
 
+  def test_add_money_to_bar_til
+    @bar.add_money(10)
+    assert_equal(60, @bar.til())
+  end
+
 end
