@@ -31,9 +31,19 @@ class GuestTest < MiniTest::Test
     assert_equal(@song, @guest1.favourite_song())
   end
 
-  def test_guests_favourite_song_is_present_in_guest_class
+  def test_is_favourite_song_on_room_playlist__song_present
     @room1.add_guest(@guest1)
-    assert_equal(true, @room1.is_favourite_song_here?(@guest1))
+    assert_equal(true, @guest1.is_favourite_song_here?(@room1))
   end
+
+  # def test_is_favourite_song_on_room_playlist__song_not_present
+  #   @room2.add_guest(@guest1)
+  #   assert_equal(false, @room2.is_favourite_song_here?(@guest1))
+  # end
+  #
+  # def test_reaction_to_favourite_song_presence__song_is_pres
+  #   @room1.add_guest(@guest1)
+  #   assert_equal("Yass, they have Billie Jean!", @guest1.check_for_favourite_song(@room1))
+  # end
 
 end
