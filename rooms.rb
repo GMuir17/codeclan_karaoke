@@ -1,7 +1,7 @@
 class Room
 
 
-  attr_reader(:name)
+  attr_reader(:name, :playlist)
 
   def initialize(name, playlist)
     @name = name
@@ -9,5 +9,9 @@ class Room
     @number_of_guests = []
   end
 
+  def display_playlist()
+    room_playlist = @playlist.map {|song| song.name()}
+    return room_playlist
+  end
 
 end
