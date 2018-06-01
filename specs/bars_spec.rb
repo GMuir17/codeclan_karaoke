@@ -25,5 +25,9 @@ class BarTest < MiniTest::Test
     assert_equal([@drink1, @drink2], @bar.drinks())
   end
 
+  def test_remove_drink_from_bar
+    @bar.remove_drink(@drink1)
+    assert_equal([], @bar.drinks())
+  end
 
 end
