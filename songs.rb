@@ -7,7 +7,9 @@ class Song
     @artist = artist
   end
 
-
+  def identify_self()
+    return "This is #{@name}, by #{@artist}"
+  end
 
 
 
