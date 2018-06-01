@@ -1,7 +1,7 @@
 class Room
 
 
-  attr_reader(:name, :playlist, :number_of_guests, :room_capacity, :entry_fee)
+  attr_reader(:name, :playlist, :number_of_guests, :room_capacity, :entry_fee, :til)
 
   def initialize(name, playlist, room_capacity)
     @name = name
@@ -9,6 +9,7 @@ class Room
     @room_capacity = room_capacity
     @number_of_guests = []
     @entry_fee = 10
+    @til = 0
   end
 
   def display_playlist()
