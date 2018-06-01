@@ -1,7 +1,7 @@
 class Bar
 
 
-  attr_reader(:room)
+  attr_reader(:room, :drinks, :til)
 
   def initialize(room, drinks, til)
     @room = room
@@ -9,7 +9,9 @@ class Bar
     @til = til
   end
 
-
+  def add_drink(drink)
+    @drinks.push(drink)
+  end
 
 
 

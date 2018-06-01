@@ -20,5 +20,10 @@ class BarTest < MiniTest::Test
     assert_equal(@room, @bar.room())
   end
 
+  def test_add_drink_to_bar
+    @bar.add_drink(@drink2)
+    assert_equal([@drink1, @drink2], @bar.drinks())
+  end
+
 
 end
