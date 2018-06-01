@@ -9,8 +9,4 @@ class Drink
   end
 
 
-
-
-
-
 end
