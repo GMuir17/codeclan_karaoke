@@ -19,7 +19,6 @@ class RoomTest < MiniTest::Test
   end
 
   def test_room_has_name
-    p @room1.playlist()
     assert_equal("Eighties", @room1.name())
   end
 
@@ -38,6 +37,11 @@ class RoomTest < MiniTest::Test
 
   def test_room_has_guest_list
     assert_equal([], @room1.number_of_guests())
+  end
+
+  def test_add_guest_to_guest_list
+    @room1.add_guest(@guest1)
+    assert_equal([@guest1], @room1.number_of_guests())
   end
 
 
