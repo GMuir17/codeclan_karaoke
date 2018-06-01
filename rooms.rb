@@ -22,5 +22,8 @@ class Room
     @number_of_guests.push(guest)
   end
 
+  def remove_guest(guest)
+    @number_of_guests.delete(guest)
+  end
 
 end
