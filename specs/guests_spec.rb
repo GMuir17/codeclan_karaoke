@@ -17,4 +17,8 @@ class GuestTest < MiniTest::Test
     assert_equal(20, @guest1.wallet())
   end
 
+  def test_remove_money_from_guest
+    assert_equal(10, @guest1.remove_money(10))
+  end
+
 end

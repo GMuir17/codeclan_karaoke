@@ -8,5 +8,9 @@ class Guest
     @wallet = wallet
   end
 
+  def remove_money(money)
+    @wallet -= money
+  end
+
 
 end
