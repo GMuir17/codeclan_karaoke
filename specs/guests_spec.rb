@@ -13,6 +13,7 @@ class GuestTest < MiniTest::Test
     @guest2 = Guest.new("Oates", 9, @song)
 
     @room1 = Room.new("Eighties", [@song], 4)
+    @room2 = Room.new("Ninties", [], 2)
   end
 
   def test_guest_has_name
@@ -36,11 +37,11 @@ class GuestTest < MiniTest::Test
     assert_equal(true, @guest1.is_favourite_song_here?(@room1))
   end
 
-  # def test_is_favourite_song_on_room_playlist__song_not_present
-  #   @room2.add_guest(@guest1)
-  #   assert_equal(false, @room2.is_favourite_song_here?(@guest1))
-  # end
-  #
+  def test_is_favourite_song_on_room_playlist__song_not_present
+    @room2.add_guest(@guest1)
+    assert_equal(false, @guest1.is_favourite_song_here?(@room2))
+  end
+
   # def test_reaction_to_favourite_song_presence__song_is_pres
   #   @room1.add_guest(@guest1)
   #   assert_equal("Yass, they have Billie Jean!", @guest1.check_for_favourite_song(@room1))
