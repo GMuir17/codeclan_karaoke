@@ -20,6 +20,7 @@ class Room
   end
 
   def add_guest(guest)
+    return "Sorry, this room is full" if @number_of_guests.length() == @room_capacity
     @number_of_guests.push(guest)
   end
 
