@@ -13,6 +13,7 @@ class RoomTest < MiniTest::Test
     song1 = Song.new("Everybody Wants to Rule the World", "Tears for Fears")
     song2 = Song.new("Sweet Dreams", "The Eurythmics")
     @song3 = Song.new("The Boys of Summer", "Don Henley")
+    @song4 = Song.new("Don't You Want Me", "The Human League")
 
     @room1 = Room.new("Eighties", [song1, song2])
   end
@@ -30,6 +31,10 @@ class RoomTest < MiniTest::Test
     @room1.add_song(@song3)
     assert_equal(["Everybody Wants to Rule the World", "Sweet Dreams", "The Boys of Summer"], @room1.display_playlist())
   end
+
+  # def test_add_multiple_songs_to_playlist
+  #   @room1.add_multiple_songs(@song)
+  # end
 
 
 end
