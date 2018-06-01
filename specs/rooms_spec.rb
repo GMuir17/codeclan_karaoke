@@ -79,5 +79,9 @@ class RoomTest < MiniTest::Test
     assert_equal(10, @room1.til())
   end
 
+  def test_take_entry_fee_from_customer__insufficient_money
+    @room1.take_entry_fee(@guest2)
+    assert_equal(0, @room1.til())
+  end
 
 end

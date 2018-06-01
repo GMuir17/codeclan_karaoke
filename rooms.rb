@@ -35,6 +35,7 @@ class Room
   end
 
   def take_entry_fee(guest)
+    return if guest.wallet() < @entry_fee
     fee_to_exchange = guest.remove_money(@entry_fee)
     add_money(fee_to_exchange)
   end
