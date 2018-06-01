@@ -26,7 +26,10 @@ class RoomTest < MiniTest::Test
     assert_equal(["Everybody Wants to Rule the World", "Sweet Dreams"], @room1.display_playlist())
   end
 
-
+  def test_add_song_to_playlist
+    @room1.add_song(@song3)
+    assert_equal(["Everybody Wants to Rule the World", "Sweet Dreams", "The Boys of Summer"], @room1.display_playlist())
+  end
 
 
 end

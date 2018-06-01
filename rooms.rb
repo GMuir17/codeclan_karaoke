@@ -14,4 +14,10 @@ class Room
     return room_playlist
   end
 
+  def add_song(song)
+    @playlist.push(song)
+  end
+
+
+
 end
