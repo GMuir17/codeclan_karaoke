@@ -1,7 +1,7 @@
 class Room
 
 
-  attr_reader(:name, :playlist)
+  attr_reader(:name, :playlist, :number_of_guests)
 
   def initialize(name, playlist)
     @name = name
