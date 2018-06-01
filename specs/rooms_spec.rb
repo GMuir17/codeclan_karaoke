@@ -15,11 +15,19 @@ class RoomTest < MiniTest::Test
     @song3 = Song.new("The Boys of Summer", "Don Henley")
     @song4 = Song.new("Don't You Want Me", "The Human League")
 
-    @room1 = Room.new("Eighties", [song1, song2])
+    @room1 = Room.new("Eighties", [song1, song2], 4)
   end
 
   def test_room_has_name
     assert_equal("Eighties", @room1.name())
+  end
+
+  def test_room_has_guest_list
+    assert_equal([], @room1.number_of_guests())
+  end
+
+  def test_room_has_max_capacity
+    assert_equal(4, @room1.room_capacity())
   end
 
   def test_display_playlist_by_song_name
@@ -34,10 +42,6 @@ class RoomTest < MiniTest::Test
   # def test_add_multiple_songs_to_playlist
   #   @room1.add_multiple_songs(@song)
   # end
-
-  def test_room_has_guest_list
-    assert_equal([], @room1.number_of_guests())
-  end
 
   def test_add_guest_to_guest_list
     @room1.add_guest(@guest1)
