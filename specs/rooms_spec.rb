@@ -7,9 +7,9 @@ class RoomTest < MiniTest::Test
 
 
   def setup
-    @guest1 = Guest.new("Hall")
-    @guest2 = Guest.new("Oates")
-    @guest3 = Guest.new("Daryl")
+    @guest1 = Guest.new("Hall", 20)
+    @guest2 = Guest.new("Oates", 9)
+    @guest3 = Guest.new("Daryl", 50)
 
     song1 = Song.new("Everybody Wants to Rule the World", "Tears for Fears")
     song2 = Song.new("Sweet Dreams", "The Eurythmics")
@@ -30,6 +30,10 @@ class RoomTest < MiniTest::Test
 
   def test_room_has_max_capacity
     assert_equal(4, @room1.room_capacity())
+  end
+
+  def test_has_entry_fee
+    assert_equal(10, @room1.entry_fee())
   end
 
   def test_display_playlist_by_song_name
