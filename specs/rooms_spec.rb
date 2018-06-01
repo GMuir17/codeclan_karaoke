@@ -70,9 +70,13 @@ class RoomTest < MiniTest::Test
     assert_equal("Sorry, this room is full", @room2.add_guest(@guest3))
   end
 
+  def test_add_money_to_til
+    assert_equal(20, @room1.add_money(20))
+  end
+
   # def test_take_entry_fee_from_customer__sufficient_money
-  #   @room1.take_entry_fee(@customer1)
-  #   assert_equal()
+  #   @room1.take_entry_fee(@guest1)
+  #   assert_equal(10, @room1.til())
   # end
 
 

@@ -30,4 +30,14 @@ class Room
     @number_of_guests.delete(guest)
   end
 
+  def add_money(money)
+    @til += money
+  end
+
+  # def take_entry_fee(guest)
+  #   fee_to_exchange = guest.remove_money(@entry_fee)
+  #
+  # end
+
+
 end
