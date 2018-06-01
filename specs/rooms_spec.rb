@@ -89,4 +89,9 @@ class RoomTest < MiniTest::Test
     assert_equal(true, @room1.is_favourite_song_here?(@guest1))
   end
 
+  def test_guests_favourite_song_is_on_rooms_playlist__song_not_present
+    @room2.add_guest(@guest1)
+    assert_equal(false, @room2.is_favourite_song_here?(@guest1))
+  end
+
 end
