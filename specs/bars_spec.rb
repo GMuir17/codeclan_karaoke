@@ -47,4 +47,10 @@ class BarTest < MiniTest::Test
     assert_equal(60, @bar.til())
   end
 
+  def test_take_entry_fee_from_customer__insufficient_money
+    @bar.take_entry_fee(@guest2)
+    assert_equal(50, @bar.til())
+    assert_equal("Not today mate", @bar.take_entry_fee(@guest2))
+  end
+
 end

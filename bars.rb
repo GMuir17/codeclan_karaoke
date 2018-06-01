@@ -23,7 +23,7 @@ class Bar
 
   def take_entry_fee(guest)
     entry_fee = @room.entry_fee()
-    return if guest.wallet() < entry_fee
+    return "Not today mate" if guest.wallet() < entry_fee
 
     fee_to_exchange = guest.remove_money(entry_fee)
     add_money(fee_to_exchange)
