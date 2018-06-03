@@ -61,11 +61,15 @@ class GuestTest < MiniTest::Test
 
   def test_guest_can_buy_drink_sufficient_money_and_stock
     skip
-    p @bar.drinks()
     @guest1.buy_drink("beer")
     assert_equal(16, @guest1.wallet())
   end
 
+  def test_add_drink_array_to_guest
+    order = [@drink1]
+    @guest1.add_drink(order)
+    assert_equal([@drink1], @guest1.drinks())
+  end
 
 
 end

@@ -79,8 +79,10 @@ class BarTest < MiniTest::Test
   end
 
   def test_sell_drink_to_guest_sufficient_money_and_stock
-    @bar.sell_drink(@guest1, "beer", 1)
+    order = @bar.create_order("beer", 1)
+    @bar.sell_drink(@guest1, order)
     assert_equal([], @bar.drinks())
+    # assert_equal([@drink1], @guest1.drinks())
   end
 
 end
