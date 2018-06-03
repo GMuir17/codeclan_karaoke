@@ -11,6 +11,10 @@ class BarTest < MiniTest::Test
   def setup
     @drink1 = Drink.new("beer", 4)
     @drink2 = Drink.new("wine", 5)
+    @drink3 = Drink.new("beer", 5)
+    @drink4 = Drink.new("whisky", 5)
+
+    @drink_array = [@drink3, @drink4]
 
     song1 = Song.new("Everybody Wants to Rule the World", "Tears for Fears")
     song2 = Song.new("Sweet Dreams", "The Eurythmics")
@@ -61,6 +65,11 @@ class BarTest < MiniTest::Test
   def test_bar_can_create_order_drink_not_in_stock
     test_order = @bar.create_order("wine", 1)
     assert_equal([], test_order)
+  end
+
+  def test_add_array_of_drinks
+    @bar.add_array_of_drinks(@drink_array)
+    assert_equal([@drink1, @drink3, @drink4], @bar.drinks())
   end
 
 end

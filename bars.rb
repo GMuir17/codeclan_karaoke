@@ -42,5 +42,9 @@ class Bar
     return new_order
   end
 
+  def add_array_of_drinks(drink_array)
+    @drinks.concat(drink_array)
+  end
+
 
 end
