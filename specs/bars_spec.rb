@@ -82,7 +82,7 @@ class BarTest < MiniTest::Test
     order = @bar.create_order("beer", 1)
     @bar.sell_drink(@guest1, order)
     assert_equal([], @bar.drinks())
-    # assert_equal([@drink1], @guest1.drinks())
+    assert_equal([@drink1], @guest1.drinks())
   end
 
 end

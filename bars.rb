@@ -54,7 +54,7 @@ class Bar
 
   def sell_drink(guest, order)
     remove_array_of_drinks(order)
-    
+    guest.add_drink(order)
   end
 
 end
