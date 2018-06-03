@@ -52,5 +52,9 @@ class Bar
     end
   end
 
+  def sell_drink(guest, drink_type, drink_number)
+    order = @bar.create_order(drink_type, drink_number)
+    @bar.remove_array_of_drinks(order)
+  end
 
 end

@@ -78,4 +78,9 @@ class BarTest < MiniTest::Test
     assert_equal([@drink1], @bar.drinks())
   end
 
+  def test_sell_drink_to_guest_sufficient_money_and_stock
+    @bar.sell_drink(@guest1, "beer", 1)
+    assert_equal([], @bar.drinks())
+  end
+
 end
