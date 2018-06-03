@@ -83,6 +83,8 @@ class BarTest < MiniTest::Test
     @bar.sell_drink(@guest1, order)
     assert_equal([], @bar.drinks())
     assert_equal([@drink1], @guest1.drinks())
+    assert_equal(54, @bar.til())
+    assert_equal(16, @guest1.wallet())
   end
 
 end

@@ -55,6 +55,13 @@ class Bar
   def sell_drink(guest, order)
     remove_array_of_drinks(order)
     guest.add_drink(order)
+
+    order_price_array = order.map {|drink_price| drink_price.price()}
+
+    order_price = order_price_array.reduce {|sum, price| sum + price}
+
+    add_money(order_price)
+    guest.remove_money(order_price)
   end
 
 end
