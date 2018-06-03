@@ -46,5 +46,11 @@ class Bar
     @drinks.concat(drink_array)
   end
 
+  def remove_array_of_drinks(drink_array)
+    for drink in drink_array
+      @drinks.delete(drink)
+    end
+  end
+
 
 end

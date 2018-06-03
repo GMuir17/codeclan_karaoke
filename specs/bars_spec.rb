@@ -72,4 +72,10 @@ class BarTest < MiniTest::Test
     assert_equal([@drink1, @drink3, @drink4], @bar.drinks())
   end
 
+  def test_remove_array_of_drinks
+    @bar.add_array_of_drinks(@drink_array)
+    @bar.remove_array_of_drinks(@drink_array)
+    assert_equal([@drink1], @bar.drinks())
+  end
+
 end
