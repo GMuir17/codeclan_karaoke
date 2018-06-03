@@ -53,4 +53,14 @@ class BarTest < MiniTest::Test
     assert_equal("Not today mate", @bar.take_entry_fee(@guest2))
   end
 
+  def test_bar_can_create_order__drink_in_stock
+    test_order = @bar.create_order("beer", 1)
+    assert_equal([@drink1], test_order)
+  end
+
+  def test_bar_can_create_order_drink_not_in_stock
+    test_order = @bar.create_order("wine", 1)
+    assert_equal([], test_order)
+  end
+
 end

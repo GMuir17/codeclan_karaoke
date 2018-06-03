@@ -29,5 +29,18 @@ class Bar
     add_money(fee_to_exchange)
   end
 
+  def create_order(drink_type, drink_number)
+    new_order = []
+    counter = 0
+    for drink in @drinks
+      return if counter == drink_number
+      if drink.type() == drink_type
+        new_order.push(drink)
+        counter += 1
+      end
+    end
+    return new_order
+  end
+
 
 end

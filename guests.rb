@@ -7,6 +7,7 @@ class Guest
     @name = name
     @wallet = wallet
     @favourite_song = favourite_song
+    @drink_array = []
   end
 
   def remove_money(money)
@@ -25,5 +26,10 @@ class Guest
       return "Boo"
     end
   end
+
+  # def buy_drink(drink_name)
+  #   drink = @bar.drinks()
+  # end
+
 
 end
